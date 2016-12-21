@@ -4,13 +4,12 @@ object tracking with a non-static camera
 C++ Compiler, g++ g++ pkg-config opencv --cflags shaky_camera_HSV_BGR.cpp -o shaky_camera_HSV_BGR.out pkg-config opencv --libs -I/usr/local/include/opencvblobslib -L/usr/local/lib -lopencvblobslib -std=c++11
 
 
-These source code programs are the result of my (Roy Xing) summer internship at Aptima during the summer of 2016.
+These source code programs are the result of my (Roy Xing) summer internship at Aptima during the summer of 2016 (as a rising high school junior).
 
 These programs use OpenCV 2.4.13 and the C++ standard library
 
 The main goal of this project was to create a program that could track an object from a video feed of a non static
-camera (simply just a very shaky camera). The videos are from the VIRAT dataset, and given access to
-through Aptima.
+camera (simply just a very shaky camera). The videos are from the VIRAT public dataset.
 
 The problem that arose from shaky camera feed is that normal methods for object tracking such as background
 subtraction prove useless and or incredibly complicated to impliment. This is due to everything in the camera
