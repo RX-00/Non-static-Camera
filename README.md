@@ -19,7 +19,7 @@ As of writing this (August 11, 2016) near the end of my internship this problem 
 that is still daunting the computer vision field. (Even these sets of programs are incomplete in solving
 this issue, though I will continue development).
 
-The method that I (Roy Xing) present to solve this issue is to track all the objects in the video feed
+The method that I present to solve this issue is to track all the objects in the video feed
 (with methods such as Kalman Filters, Regions of Interest, color masking, or a combination of these)
 and then compare the distances between all the objects in the video feed. All the distances are then
 compared from the previous frame to the current frame in order to see if any distance between a set
