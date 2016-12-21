@@ -145,16 +145,35 @@ void analyzeVideo(){
         "4: car driving backwards \n"<<
         "5: panning shot of building and people \n"<<
         "6: lots of moving people \n"<<
+        "7: egTest01, cars driving along huge road\n"<<
     endl;
 
   cin>>whichVideo;
 
-  cout<<"You have choosen video \n"<<whichVideo<<endl;
+  if(whichVideo <= 7 && whichVideo >= 1){
+    cout<<"You have choosen video "<<whichVideo<<"\n"<<endl;
+    cout<<"You need to enter a password to view any video besides egTest01"<<endl;
+    if(whichVideo != 7){
+      int password;
+      cout<<"Please enter a numeral password to view this video"<<endl;
+      cin>>password;
+      if(password == 1802010){
+        cout<<"access granted"<<endl;
+      }
+      else{
+        cout<<"access denied"<<endl;
+        whichVideo = -1;
+      }
+    }
+  }
+  else{
+    cout<<"Your choose does not correspond to a video\n"<<endl;
+  }
 
   switch(whichVideo){
   case 1:
     //NOTE: the video must be in the same directory as the code is located in OR link to it
-    capVideo.open("09152008flight2tape1_6s.mp4"); //this is the video to be opened
+    capVideo.open("/roy/Code/C++/09152008flight2tape1_6s.mp4"); //this is the video to be opened
     break;
   case 2:
     capVideo.open("09152008flight2tape2_1s_1.mp4");
@@ -170,6 +189,12 @@ void analyzeVideo(){
     break;
   case 6:
     capVideo.open("09172008flight1tape1_5s.mp4");
+    break;
+  case 7:
+    capVideo.open("egTest01.mp4");
+    break;
+  default:
+    cout<<"Video N/A"<<endl;
     break;
   }
 
@@ -577,6 +602,7 @@ Video of lots of people walking around and moving, though they are bigger and th
           //cout<<"Center["<<i<<"] coordinates: "<<center[i]<<endl;
           float x = center[i].x;
           float y = center[i].y;
+
 
           //try to out the coordinates of the bounding box prior
           float x2 = center[abs(i-j)].x;
